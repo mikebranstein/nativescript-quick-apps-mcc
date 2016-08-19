@@ -4,13 +4,13 @@
     <b>Demo</b>: Creating an app
 </h4>
 
+Create the first app:
+
 ```
 tns create app1
 ```
 
-```
-tns platform add ios
-```
+Run in the iOS simulator:
 
 ```
 tns run ios

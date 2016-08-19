@@ -1,0 +1,1 @@
+# nativescript-quick-apps-mcc

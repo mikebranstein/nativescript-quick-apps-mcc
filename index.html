@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Quick apps with NativeScript</title>
+
+	<meta charset="utf-8">
+	<meta name="description" content="Code snippets for creating quick apps with NativeScript">
+	<meta name="author" content="Mike Branstein">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="container">
+	<div id="header">
+		<a href="#" class="menu header-btn" id="toggle-toc"></a>
+		<h1>NativeScript Workshop</h1>
+		<a href="https://github.com/mikebranstein/nativescript-quick-apps-mcc" class="github header-btn"></a>
+	</div>
+
+	<div id="content-container">
+		<div id="toc">
+			<div class="toc-heading">Table of Contents</div>
+			<div id="toc-padding"></div>
+		</div>
+		<div id="book">
+			<div class="chapter">
+				<h2 id="my-first-app-hello-world-of-nativescript">My First App: Hello World of NativeScript</h2>
+<h4 class="exercise-start">
+    <b>Demo</b>: Creating an app
+</h4>
+
+<pre><code>tns create app1
+</code></pre><pre><code>tns platform add ios
+</code></pre><pre><code>tns run ios
+</code></pre><div class="exercise-end"></div>
+
+			</div>
+			<hr>
+			<div class="chapter">
+				<h2 id="app-2-informational-app">App 2: Informational app</h2>
+<h3 id="main-page">Main page</h3>
+<h4 class="exercise-start">
+    <b>Demo</b>: Adding text to an app
+</h4>
+
+<p>First, we&#39;ll create a page and add some text.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+  &lt;ScrollView&gt;
+    &lt;StackLayout&gt;
+
+      &lt;!-- Title --&gt;
+      &lt;Label text=&quot;Welcome to Tekmo!&quot; class=&quot;title&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;Tekmo is a small online retailer specializing in retro video games sales and services. We&#39;re based in Louisville, KY.&quot; /&gt;
+
+      &lt;!-- Sub Title --&gt;
+      &lt;Label text=&quot;Our Mission&quot; class=&quot;sub-title&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;We exist to bring our customers the best in retro gaming at an affordable price. We love to revisit and replay the games that shaped our childhoods, and believe that through sharing our love, we can help shape another generation of retro gaming geeks.&quot; /&gt;
+
+      &lt;!-- Sub Title --&gt;
+      &lt;Label text=&quot;History&quot; class=&quot;sub-title&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;In the early 90&#39;s, it all started with Rescue Pups. This multi-player vintage platformer brought the Rambo-style side-scrolling gun fights to life in our living room. True, it was impossible to beat with the 3 lives you got by default, but that&#39;s why everyone knew the 50 lives code by heart: up, up, down, down, left, right, left, right, B, A, Start. And if you wanted a friend to play along, you could throw in the Select, Start at the end.&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;After Rescue Pups, it was the classics like Super Marshmallow Man and Vampire Valkyrie. Do you remember them? We do. And we loved it! We hosted sleep overs every weekend throughout the summer, stayed up too late, got in trouble, pretended to fall asleep, then crept downstairs in the middle of the night to continue the fun.&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;As we grew older, the games we played did too, but our love for the originals never stopped, and our passion for sharing these games with our friends and family grew.&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;After many year, we all started having kids of our own, and we found ourselves wanting to raise our kids in our footsteps (without the midnight gaming marathons, of course). We wanted our kids to relive the adventure. Relive the thrills. Relive the classics. Tekmo was born.&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;We remembered how cool it was to get 50 lives, so now our kids could enjoy playing through Rescue Pups for hours.&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;And then there was Vampire Valkyrie: a side-scrolling adventure into the depths of Transylvania seeking out Dracula and his minions. After gathering your supplies in local towns, you embarked on a journey through the countryside to rescue trapped village people. We never forget to bring your stake and darn your garlic. And when we finally meet Dracula face-to-face, holy water didn&#39;t save us. And now, the fate of the world is on another 7 year old&#39;s shoulders.&quot; /&gt;
+
+      &lt;Label textWrap=&quot;true&quot; text=&quot;Lastly, Super Marshmallow Man is the one that pushed us over the edge with its iconic landscapes filled with clouds and wonderous sky scenes. We regularly play through the 12 worlds of Mallow Kingdom while avoiding the hungry Chompers with our friends and families: the best part is still watching someone get too close to the flames and melt!&quot; /&gt;    
+
+    &lt;/StackLayout&gt;
+  &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<div class="exercise-end"></div>
+
+<p>Now, let&#39;s style our app with CSS.</p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Adding some style
+</h4>
+
+<p>Add a file named <code>main-page.css</code>. Add the styling:</p>
+<pre><code class="lang-css">/* Color the background */
+Page {
+    background-color: lightblue;
+}
+
+/* Give text some room around the edges */
+Label {
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 10;
+}
+
+/* Make the title stand out */
+.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+/* Sub titles are a bit smaller */
+.sub-title {
+    font-size: 20;
+}
+</code></pre>
+<div class="exercise-end"></div>
+
+			</div>
+			<hr>
+			<div class="chapter">
+				<h2 id="app-3-data-submission">App 3: Data submission</h2>
+<h3 id="main-page">Main Page</h3>
+<h4 class="exercise-start">
+    <b>Demo</b>: Navigating to another page 
+</h4>
+
+<p>Add a <code>&lt;Button /&gt;</code> to the main page of the app.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;StackLayout&gt;
+        &lt;Label text=&quot;Welcome to Tekmo!&quot; class=&quot;title&quot; /&gt;
+
+        &lt;Button id=&quot;contact-us&quot; text=&quot;Contact Us&quot; tap=&quot;onContactUsTap&quot; /&gt;
+    &lt;/StackLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Wire the button to navigate to the Contact Us page.</p>
+<pre><code class="lang-javascript">var frameModule = require(&quot;ui/frame&quot;);
+
+exports.onContactUsTap = function (args) {
+    console.log(&quot;Navigating to the Contact Us page.&quot;);
+    frameModule.topmost().navigate(&quot;contact-us&quot;);
+};
+</code></pre>
+<div class="exercise-end"></div>
+
+<h3 id="building-the-contact-us-page">Building the Contact Us page</h3>
+<h4 class="exercise-start">
+    <b>Demo</b>: Navigating to another page 
+</h4>
+
+<p>Add a Contact Us page with content.</p>
+<pre><code class="lang-xml">&lt;Page loaded=&quot;onLoaded&quot;&gt;
+    &lt;StackLayout&gt;
+        &lt;!-- title --&gt;
+        &lt;Label text=&quot;Contact Us&quot; class=&quot;title&quot; /&gt;
+
+        &lt;!-- data submission --&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;Contact us by submitting a message below.&quot; /&gt;
+
+        &lt;TextField id=&quot;subject&quot; hint=&quot;Enter a subject...&quot; /&gt;
+        &lt;TextView id=&quot;message&quot; hint=&quot;Enter a message...&quot; /&gt;
+
+        &lt;Button text=&quot;Submit&quot; tap=&quot;onTap&quot; /&gt;
+
+    &lt;/StackLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Add a Contact Us JavaScript page and code.</p>
+<pre><code class="lang-javascript">var httpModule = require(&quot;http&quot;);
+var dialogModule = require(&quot;ui/dialogs&quot;);
+var page;
+
+// capture a reference to the current page after it loads
+// we&#39;ll need this later to access the text boxes on the screen
+exports.onLoaded = function onLoaded(args) {
+    page = args.object;
+};
+
+exports.onTap = function onTap(args) {
+
+    // step 1: get data out of text field and text view
+    var subject = page.getViewById(&quot;subject&quot;).text;
+    var message = page.getViewById(&quot;message&quot;).text;
+
+    console.log(&quot;Submitting: &quot; + subject + &quot;, &quot; + message);
+
+    // step 2: submit data to Tekmo
+
+    // step 2.1: assemble data to send
+    var data = JSON.stringify({
+        &quot;subject&quot;: subject,
+        &quot;message&quot;: message
+    });
+
+    // step 2.2: send the request toa remote web service
+    httpModule
+        .request({
+            url: &quot;https://nstweet.brosteins.com/api/message&quot;,
+            method: &quot;POST&quot;,
+            headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+            content: data })
+        .then(function(response) {
+            // success: tell the user
+            console.log(&quot;Received a response: HTTP &quot; + response.statusCode);
+            dialogModule.alert(&quot;Thank you for your feedback!&quot;);
+        }, function(e) {
+            // error: oh snap
+            console.log(&quot;Error occurred: &quot; + e);
+            dialogModule.alert(&quot;We couldn&#39;t send your message right now. Try again later.&quot;);
+        });
+};
+</code></pre>
+<div class="exercise-end"></div>
+
+
+			</div>
+			<hr>
+			<div class="chapter">
+				<h2 id="app-4-product-listing">App 4: Product listing</h2>
+<h3 id="product-page">Product page</h3>
+<h4 class="exercise-start">
+    <b>Demo</b>: Using a grid layout
+</h4>
+
+<p>Add a simple grid to the Products page.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+  &lt;ScrollView&gt;
+    &lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+
+        &lt;!-- highlighted product --&gt;    
+        &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile highlight&quot;&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Couch Commander --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Mummy Madness --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Pyro Robots --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Rescue Pups --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Vampire Valkyrie --&gt;
+        &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+        &lt;/StackLayout&gt;
+    &lt;/GridLayout&gt;
+  &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Add some styling to the <code>app.css</code> file.</p>
+<pre><code>/* Give text some room around the edges */
+Label {
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 10;
+}
+
+/* Make the title stand out */
+.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+/* Sub titles are a bit smaller */
+.sub-title {
+    font-size: 20;
+}
+
+/* Give the page a default background color */
+Page {
+    background-color: #EFEFEF;
+}
+
+/* color each tile&#39;s background */
+.tile {
+    background-color: #FFFFFF;
+    margin: 2;
+}
+</code></pre><div class="exercise-end"></div>
+
+<p>We should add a title for each product we&#39;re selling</p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Adding a title to the tiles
+</h4>
+
+<p>Add stack layouts and labels for each game title</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+  &lt;ScrollView&gt;
+    &lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+
+        &lt;!-- highlighted product --&gt;    
+        &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile highlight&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+            &lt;/StackLayout&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Couch Commander --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Mummy Madness --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Pyro Robots --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Rescue Pups --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Vampire Valkyrie --&gt;
+        &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+        &lt;/StackLayout&gt;
+    &lt;/GridLayout&gt;
+  &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Now, style the titles.</p>
+<pre><code>/* Give text some room around the edges */
+Label {
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 10;
+}
+
+/* Make the title stand out */
+.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+/* Sub titles are a bit smaller */
+.sub-title {
+    font-size: 20;
+}
+
+/* Give the page a default background color */
+Page {
+    background-color: #EFEFEF;
+}
+
+/* color each tile&#39;s background */
+.tile {
+    background-color: #FFFFFF;
+    margin: 2;
+}
+
+/* solid band across the top of each tile */
+.tile-title {
+    background-color: #99ccff;
+}
+
+/* the title of each game */
+.tile-title Label {
+    font-size: 14;
+    color: black;
+    margin-top: 5;
+}
+</code></pre><div class="exercise-end"></div>
+
+<p>Now, let&#39;s add an image and a price.</p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Adding a game image and price
+</h4>
+
+<p>Add an <code>&lt;Image /&gt;</code> tag to each of the tiles.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+  &lt;ScrollView&gt;
+    &lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+
+        &lt;!-- highlighted product --&gt;    
+        &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile highlight&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile content goes here --&gt;
+            &lt;Image src=&quot;res://supermarshmallowman&quot; /&gt;
+            &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death in this wild adventure!&quot; /&gt;
+            &lt;Label text=&quot;$34.99&quot; class=&quot;price&quot; /&gt;
+
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Couch Commander --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://couchcommander&quot; /&gt;
+            &lt;Label text=&quot;$24.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Mummy Madness --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://mummymadness&quot; /&gt;
+            &lt;Label text=&quot;$32.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Pyro Robots --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://pyrorobots&quot; /&gt;
+            &lt;Label text=&quot;$19.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Rescue Pups --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://rescuepups&quot; /&gt;
+            &lt;Label text=&quot;$9.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Vampire Valkyrie --&gt;
+        &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://vampirevalkyrie&quot; /&gt;
+            &lt;Label text=&quot;$21.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+    &lt;/GridLayout&gt;
+  &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>And style the images to be smaller, also coloring the price green.</p>
+<pre><code>/* Give text some room around the edges */
+Label {
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 10;
+}
+
+/* Make the title stand out */
+.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+/* Sub titles are a bit smaller */
+.sub-title {
+    font-size: 20;
+}
+
+/* Give the page a default background color */
+Page {
+    background-color: #EFEFEF;
+}
+
+/* color each tile&#39;s background */
+.tile {
+    background-color: #FFFFFF;
+    margin: 2;
+}
+
+/* solid band across the top of each tile */
+.tile-title {
+    background-color: #99ccff;
+}
+
+/* the title of each game */
+.tile-title Label {
+    font-size: 14;
+    color: black;
+    margin-top: 5;
+}
+
+/* make the price stand out and align to the right */
+.price {
+    color: #009933;
+    text-align: right;
+}
+
+/* shrink images a bit */
+Image {
+    width: 80;
+    height: 80;
+}
+</code></pre><div class="exercise-end"></div>
+
+<p>The highlighted tile has text scrolling out, so let&#39;s re-organize.</p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Refactoring the highlighted tile
+</h4>
+
+<p>Lastly, let&#39;s make the highlighted tile look fancy.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+  &lt;ScrollView&gt;
+    &lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+
+        &lt;!-- highlighted product --&gt;    
+        &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile highlight&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+            &lt;/StackLayout&gt;
+
+            &lt;!-- align content horizontally image on the left, content on the right --&gt;
+            &lt;StackLayout orientation=&quot;horizontal&quot;&gt;
+
+                &lt;!-- image on the left --&gt;
+                &lt;Image src=&quot;res://supermarshmallowman&quot; /&gt;
+
+                &lt;!-- content is on the right in a vertical orientation --&gt;
+                &lt;StackLayout&gt;
+                    &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death in this wild adventure!&quot; /&gt;
+                    &lt;Label text=&quot;$34.99&quot; class=&quot;price&quot; /&gt;
+                &lt;/StackLayout&gt;
+            &lt;/StackLayout&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Couch Commander --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://couchcommander&quot; /&gt;
+            &lt;Label text=&quot;$24.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Mummy Madness --&gt;
+        &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://mummymadness&quot; /&gt;
+            &lt;Label text=&quot;$32.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Pyro Robots --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://pyrorobots&quot; /&gt;
+            &lt;Label text=&quot;$19.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Rescue Pups --&gt;
+        &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://rescuepups&quot; /&gt;
+            &lt;Label text=&quot;$9.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;!-- Vampire Valkyrie --&gt;
+        &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+
+            &lt;!-- solid band at top of tile with title --&gt;
+            &lt;StackLayout class=&quot;tile-title&quot;&gt;
+                &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+            &lt;/StackLayout&gt;
+
+            &lt;!-- tile contents here --&gt;
+            &lt;Image src=&quot;res://vampirevalkyrie&quot; /&gt;
+            &lt;Label text=&quot;$21.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+    &lt;/GridLayout&gt;
+  &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>And style.</p>
+<pre><code>/* Give text some room around the edges */
+Label {
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 10;
+}
+
+/* Make the title stand out */
+.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+/* Sub titles are a bit smaller */
+.sub-title {
+    font-size: 20;
+}
+
+/* Give the page a default background color */
+Page {
+    background-color: #EFEFEF;
+}
+
+/* color each tile&#39;s background */
+.tile {
+    background-color: #FFFFFF;
+    margin: 2;
+}
+
+/* solid band across the top of each tile */
+.tile-title {
+    background-color: #99ccff;
+}
+
+/* the title of each game */
+.tile-title Label {
+    font-size: 14;
+    color: black;
+    margin-top: 5;
+}
+
+/* make the price stand out and align to the right */
+.price {
+    color: #009933;
+    text-align: right;
+}
+
+/* shrink images a bit */
+Image {
+    width: 80;
+    height: 80;
+}
+
+/* the first top element should be more prominent
+   override the existing tile styles */
+.highlight .tile-title {
+    font-weight: bold;
+    background-color: #6699ff;
+}
+
+.highlight .tile-title Label {
+    font-size: 18;
+}
+
+.highlight .price {
+    font-weight: bold;
+    color: red;
+}
+
+.highlight Image {
+    width: 100;
+    height: 100;
+}
+</code></pre><div class="exercise-end"></div>
+
+
+<h4 class="exercise-start">
+    <b>Demo</b>: Using a grid layout
+</h4>
+
+
+
+<div class="exercise-end"></div>
+
+			</div>
+			<hr>
+			<div class="chapter">
+				<h2 id="app-5-i-caught-em-all">App 5: I caught &#39;em all</h2>
+<p>My kids love Pokemon, so I had to build them a pokedex app. Let&#39;s do it together.</p>
+<h3 id="navigation">Navigation</h3>
+<p>I want to scroll through / navigate between Pokemon. Let&#39;s add some navigation. </p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Using a grid layout
+</h4>
+
+<p>Add a basic grid to the screen. </p>
+<pre><code class="lang-xml">&lt;Page xmlns=&quot;http://schemas.nativescript.org/tns.xsd&quot; loaded=&quot;onLoaded&quot;&gt;
+    &lt;GridLayout rows=&quot;3*,2*,45*&quot; columns=&quot;*,*&quot;&gt;
+
+      &lt;!-- 
+        left nav
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;prevNav&quot; row=&quot;0&quot; col=&quot;0&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/left.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;prevNavText&quot; row=&quot;0&quot; col=&quot;0&quot; tap=&quot;{{ onTap }}&quot; 
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-prev&quot;&gt;
+
+        &lt;!-- Custom font from font-awesome of a Left Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf053;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;prevId&quot; text=&quot;{{ prevId }}&quot; class=&quot;nav-id&quot; /&gt;
+        &lt;Label id=&quot;prevNavName&quot; text=&quot;{{ prevName }}&quot; class=&quot;nav-name&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!-- 
+        right nav 
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;nextNav&quot; row=&quot;0&quot; col=&quot;1&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/right.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;nextNavText&quot; row=&quot;0&quot; col=&quot;1&quot; tap=&quot;{{ onTap }}&quot;
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-next&quot;&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;nextNavName&quot; text=&quot;{{ nextName }}&quot; class=&quot;nav-name&quot; /&gt;
+        &lt;Label id=&quot;nextId&quot; text=&quot;{{ nextId }}&quot; class=&quot;nav-id&quot; /&gt;
+
+        &lt;!-- Custom font from font-awesome of a Right Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf054;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!--
+        center-aligned Pokemon name
+        tapping on the name, calls a text-to-speech
+      --&gt;
+      &lt;StackLayout orientation=&quot;horizontal&quot; row=&quot;1&quot; colSpan=&quot;2&quot; horizontalAlignment=&quot;center&quot;
+        tap=&quot;{{ onSayName }}&quot;&gt;
+
+        &lt;!-- data-bound name and id --&gt;
+        &lt;Label id=&quot;name&quot; text=&quot;{{ name }}&quot; /&gt;
+        &lt;Label id=&quot;id&quot; text=&quot;{{ id }}&quot; /&gt;
+
+        &lt;Button text=&quot;&amp;#xf04b;&quot; class=&quot;font-awesome play&quot; tap=&quot;{{ onSayName }}&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+
+    &lt;/GridLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Add the page load event to bind to our data source.</p>
+<pre><code class="lang-javascript">var viewModel = require(&quot;./pokedex-view-model&quot;);
+var page;
+
+function onLoaded(args) {
+    page = args.object;
+    page.bindingContext = viewModel.pokedexViewModel;
+
+    //
+    // the pokedex view model has several properties
+    // - image of the pokemen, i.e. 001.png
+    // - name
+    // - description
+    // - id number
+    // - height
+    // - category
+    // - weight
+    // - stats (HP, Attack, Defense, Special Attack, Special Defense, and Speed)
+    // - prev pokemon name &amp; id
+    // - next pokemon name &amp; id   
+    // - navigate to prev/next pokemon
+    // - say the name
+    //
+}
+exports.onLoaded = onLoaded;
+</code></pre>
+<div class="exercise-end"></div>
+
+<h3 id="data-binding-images">Data binding images</h3>
+<p>Now, let&#39;s add the data bound image of the Pokemon.</p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Adding a data bound image
+</h4>
+
+<p>Add a data bound image is pretty easy, just add the tag and <code>{{ }}</code> syntax.</p>
+<pre><code class="lang-xml">&lt;Page xmlns=&quot;http://schemas.nativescript.org/tns.xsd&quot; loaded=&quot;onLoaded&quot;&gt;
+    &lt;GridLayout rows=&quot;3*,2*,45*&quot; columns=&quot;*,*&quot;&gt;
+
+      &lt;!-- 
+        left nav
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;prevNav&quot; row=&quot;0&quot; col=&quot;0&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/left.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;prevNavText&quot; row=&quot;0&quot; col=&quot;0&quot; tap=&quot;{{ onTap }}&quot; 
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-prev&quot;&gt;
+
+        &lt;!-- Custom font from font-awesome of a Left Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf053;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;prevId&quot; text=&quot;{{ prevId }}&quot; class=&quot;nav-id&quot; /&gt;
+        &lt;Label id=&quot;prevNavName&quot; text=&quot;{{ prevName }}&quot; class=&quot;nav-name&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!-- 
+        right nav 
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;nextNav&quot; row=&quot;0&quot; col=&quot;1&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/right.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;nextNavText&quot; row=&quot;0&quot; col=&quot;1&quot; tap=&quot;{{ onTap }}&quot;
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-next&quot;&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;nextNavName&quot; text=&quot;{{ nextName }}&quot; class=&quot;nav-name&quot; /&gt;
+        &lt;Label id=&quot;nextId&quot; text=&quot;{{ nextId }}&quot; class=&quot;nav-id&quot; /&gt;
+
+        &lt;!-- Custom font from font-awesome of a Right Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf054;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!--
+        center-aligned Pokemon name
+        tapping on the name, calls a text-to-speech
+      --&gt;
+      &lt;StackLayout orientation=&quot;horizontal&quot; row=&quot;1&quot; colSpan=&quot;2&quot; horizontalAlignment=&quot;center&quot;
+        tap=&quot;{{ onSayName }}&quot;&gt;
+
+        &lt;!-- data-bound name and id --&gt;
+        &lt;Label id=&quot;name&quot; text=&quot;{{ name }}&quot; /&gt;
+        &lt;Label id=&quot;id&quot; text=&quot;{{ id }}&quot; /&gt;
+
+        &lt;Button text=&quot;&amp;#xf04b;&quot; class=&quot;font-awesome play&quot; tap=&quot;{{ onSayName }}&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!-- 
+        THIRD ROW - Pokemon Info and Stats
+
+        Scroll view with a left and right column
+       --&gt;
+      &lt;ScrollView row=&quot;2&quot; col=&quot;0&quot; colSpan=&quot;2&quot;&gt;
+        &lt;!-- content area --&gt;
+        &lt;GridLayout rows=&quot;auto&quot; columns=&quot;*,*&quot;&gt;
+
+          &lt;!-- left column --&gt;
+          &lt;StackLayout orientation=&quot;horizontal&quot; row=&quot;0&quot; col=&quot;0&quot; class=&quot;cell&quot;&gt;
+            &lt;Border borderRadius=&quot;20&quot;&gt;
+              &lt;Image id=&quot;pokemon&quot; src=&quot;{{ imageSource }}&quot; stretch=&quot;aspectFit&quot; /&gt;
+            &lt;/Border&gt;
+          &lt;/StackLayout&gt;
+
+          &lt;/GridLayout&gt;
+        &lt;/ScrollView&gt;
+    &lt;/GridLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<div class="exercise-end"></div>
+
+<h3 id="adding-more-information">Adding more information</h3>
+<p>Adding more information is an exercise in UI layout. I&#39;ll add the right column.</p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Adding a right column wiht data bound fields
+</h4>
+
+<pre><code class="lang-xml">&lt;Page xmlns=&quot;http://schemas.nativescript.org/tns.xsd&quot; loaded=&quot;onLoaded&quot;&gt;
+    &lt;GridLayout rows=&quot;3*,2*,45*&quot; columns=&quot;*,*&quot;&gt;
+
+      &lt;!-- 
+        left nav
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;prevNav&quot; row=&quot;0&quot; col=&quot;0&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/left.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;prevNavText&quot; row=&quot;0&quot; col=&quot;0&quot; tap=&quot;{{ onTap }}&quot; 
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-prev&quot;&gt;
+
+        &lt;!-- Custom font from font-awesome of a Left Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf053;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;prevId&quot; text=&quot;{{ prevId }}&quot; class=&quot;nav-id&quot; /&gt;
+        &lt;Label id=&quot;prevNavName&quot; text=&quot;{{ prevName }}&quot; class=&quot;nav-name&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!-- 
+        right nav 
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;nextNav&quot; row=&quot;0&quot; col=&quot;1&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/right.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;nextNavText&quot; row=&quot;0&quot; col=&quot;1&quot; tap=&quot;{{ onTap }}&quot;
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-next&quot;&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;nextNavName&quot; text=&quot;{{ nextName }}&quot; class=&quot;nav-name&quot; /&gt;
+        &lt;Label id=&quot;nextId&quot; text=&quot;{{ nextId }}&quot; class=&quot;nav-id&quot; /&gt;
+
+        &lt;!-- Custom font from font-awesome of a Right Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf054;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!--
+        center-aligned Pokemon name
+        tapping on the name, calls a text-to-speech
+      --&gt;
+      &lt;StackLayout orientation=&quot;horizontal&quot; row=&quot;1&quot; colSpan=&quot;2&quot; horizontalAlignment=&quot;center&quot;
+        tap=&quot;{{ onSayName }}&quot;&gt;
+
+        &lt;!-- data-bound name and id --&gt;
+        &lt;Label id=&quot;name&quot; text=&quot;{{ name }}&quot; /&gt;
+        &lt;Label id=&quot;id&quot; text=&quot;{{ id }}&quot; /&gt;
+
+        &lt;Button text=&quot;&amp;#xf04b;&quot; class=&quot;font-awesome play&quot; tap=&quot;{{ onSayName }}&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!-- 
+        THIRD ROW - Pokemon Info and Stats
+
+        Scroll view with a left and right column
+       --&gt;
+      &lt;ScrollView row=&quot;2&quot; col=&quot;0&quot; colSpan=&quot;2&quot;&gt;
+        &lt;!-- content area --&gt;
+        &lt;GridLayout rows=&quot;auto&quot; columns=&quot;*,*&quot;&gt;
+
+          &lt;!-- left column --&gt;
+          &lt;StackLayout orientation=&quot;horizontal&quot; row=&quot;0&quot; col=&quot;0&quot; class=&quot;cell&quot;&gt;
+            &lt;Border borderRadius=&quot;20&quot;&gt;
+              &lt;Image id=&quot;pokemon&quot; src=&quot;{{ imageSource }}&quot; stretch=&quot;aspectFit&quot; /&gt;
+            &lt;/Border&gt;
+          &lt;/StackLayout&gt;
+
+
+          &lt;!-- right column --&gt;
+          &lt;StackLayout row=&quot;0&quot; col=&quot;1&quot; class=&quot;cell&quot;&gt;
+            &lt;!-- description --&gt;
+            &lt;Label id=&quot;description&quot; textWrap=&quot;true&quot; text=&quot;{{ description }}&quot; class=&quot;description&quot;
+              tap=&quot;{{ onReadDescription }}&quot; /&gt;
+
+            &lt;!-- info --&gt;
+            &lt;GridLayout rows=&quot;auto,auto,auto,auto&quot; columns=&quot;*,*&quot; class=&quot;info-container&quot;&gt;
+              &lt;Label text=&quot;Height&quot; row=&quot;0&quot; col=&quot;0&quot; class=&quot;info info-title&quot; /&gt;
+              &lt;Label text=&quot;{{ height }}&quot; row=&quot;1&quot; col=&quot;0&quot; class=&quot;info info-value&quot; /&gt;
+
+              &lt;Label text=&quot;Category&quot; row=&quot;0&quot; col=&quot;1&quot; class=&quot;info info-title&quot; /&gt;
+              &lt;Label text=&quot;{{ category }}&quot; row=&quot;1&quot; col=&quot;1&quot; class=&quot;info info-value&quot; /&gt;
+
+              &lt;Label text=&quot;Weight&quot; row=&quot;2&quot; col=&quot;0&quot; class=&quot;info info-title&quot; /&gt;
+              &lt;Label text=&quot;{{ weight }}&quot; row=&quot;3&quot; col=&quot;0&quot; class=&quot;info info-value&quot; /&gt;
+            &lt;/GridLayout&gt;
+
+            &lt;/StackLayout&gt;
+
+          &lt;/GridLayout&gt;
+        &lt;/ScrollView&gt;
+    &lt;/GridLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<div class="exercise-end"></div>
+
+
+<h3 id="animations">Animations</h3>
+<p>Now, let&#39;s have some fun by adding an animation to show the Pokemon&#39;s stats</p>
+<h4 class="exercise-start">
+    <b>Demo</b>: Adding animation
+</h4>
+
+<pre><code class="lang-xml">&lt;Page xmlns=&quot;http://schemas.nativescript.org/tns.xsd&quot; loaded=&quot;onLoaded&quot;&gt;
+    &lt;GridLayout rows=&quot;3*,2*,45*&quot; columns=&quot;*,*&quot;&gt;
+
+      &lt;!-- 
+        left nav
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;prevNav&quot; row=&quot;0&quot; col=&quot;0&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/left.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;prevNavText&quot; row=&quot;0&quot; col=&quot;0&quot; tap=&quot;{{ onTap }}&quot; 
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-prev&quot;&gt;
+
+        &lt;!-- Custom font from font-awesome of a Left Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf053;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;prevId&quot; text=&quot;{{ prevId }}&quot; class=&quot;nav-id&quot; /&gt;
+        &lt;Label id=&quot;prevNavName&quot; text=&quot;{{ prevName }}&quot; class=&quot;nav-name&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!-- 
+        right nav 
+        if you tap anything, the onTap event is called 
+        --&gt;
+      &lt;Image id=&quot;nextNav&quot; row=&quot;0&quot; col=&quot;1&quot; rowSpan=&quot;2&quot;
+        src=&quot;~/images/right.png&quot; stretch=&quot;fill&quot; tap=&quot;{{ onTap }}&quot; /&gt;
+
+      &lt;StackLayout id=&quot;nextNavText&quot; row=&quot;0&quot; col=&quot;1&quot; tap=&quot;{{ onTap }}&quot;
+        orientation=&quot;horizontal&quot; horizontalAlignment=&quot;center&quot; class=&quot;nav nav-next&quot;&gt;
+
+        &lt;!-- Data-bound fields between {{ and }}, uses page&#39;s bindingContext object --&gt;
+        &lt;Label id=&quot;nextNavName&quot; text=&quot;{{ nextName }}&quot; class=&quot;nav-name&quot; /&gt;
+        &lt;Label id=&quot;nextId&quot; text=&quot;{{ nextId }}&quot; class=&quot;nav-id&quot; /&gt;
+
+        &lt;!-- Custom font from font-awesome of a Right Arrow --&gt;
+        &lt;Label text=&quot;&amp;#xf054;&quot; class=&quot;font-awesome nav-arrow&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!--
+        center-aligned Pokemon name
+        tapping on the name, calls a text-to-speech
+      --&gt;
+      &lt;StackLayout orientation=&quot;horizontal&quot; row=&quot;1&quot; colSpan=&quot;2&quot; horizontalAlignment=&quot;center&quot;
+        tap=&quot;{{ onSayName }}&quot;&gt;
+
+        &lt;!-- data-bound name and id --&gt;
+        &lt;Label id=&quot;name&quot; text=&quot;{{ name }}&quot; /&gt;
+        &lt;Label id=&quot;id&quot; text=&quot;{{ id }}&quot; /&gt;
+
+        &lt;Button text=&quot;&amp;#xf04b;&quot; class=&quot;font-awesome play&quot; tap=&quot;{{ onSayName }}&quot; /&gt;
+      &lt;/StackLayout&gt;
+
+      &lt;!-- 
+        THIRD ROW - Pokemon Info and Stats
+
+        Scroll view with a left and right column
+       --&gt;
+      &lt;ScrollView row=&quot;2&quot; col=&quot;0&quot; colSpan=&quot;2&quot;&gt;
+        &lt;!-- content area --&gt;
+        &lt;GridLayout rows=&quot;auto&quot; columns=&quot;*,*&quot;&gt;
+
+          &lt;!-- left column --&gt;
+          &lt;StackLayout orientation=&quot;horizontal&quot; row=&quot;0&quot; col=&quot;0&quot; class=&quot;cell&quot;&gt;
+            &lt;Border borderRadius=&quot;20&quot;&gt;
+              &lt;Image id=&quot;pokemon&quot; src=&quot;{{ imageSource }}&quot; stretch=&quot;aspectFit&quot; /&gt;
+            &lt;/Border&gt;
+          &lt;/StackLayout&gt;
+
+
+          &lt;!-- right column --&gt;
+          &lt;StackLayout row=&quot;0&quot; col=&quot;1&quot; class=&quot;cell&quot;&gt;
+            &lt;!-- description --&gt;
+            &lt;Label id=&quot;description&quot; textWrap=&quot;true&quot; text=&quot;{{ description }}&quot; class=&quot;description&quot;
+              tap=&quot;{{ onReadDescription }}&quot; /&gt;
+
+            &lt;!-- info --&gt;
+            &lt;GridLayout rows=&quot;auto,auto,auto,auto&quot; columns=&quot;*,*&quot; class=&quot;info-container&quot;&gt;
+              &lt;Label text=&quot;Height&quot; row=&quot;0&quot; col=&quot;0&quot; class=&quot;info info-title&quot; /&gt;
+              &lt;Label text=&quot;{{ height }}&quot; row=&quot;1&quot; col=&quot;0&quot; class=&quot;info info-value&quot; /&gt;
+
+              &lt;Label text=&quot;Category&quot; row=&quot;0&quot; col=&quot;1&quot; class=&quot;info info-title&quot; /&gt;
+              &lt;Label text=&quot;{{ category }}&quot; row=&quot;1&quot; col=&quot;1&quot; class=&quot;info info-value&quot; /&gt;
+
+              &lt;Label text=&quot;Weight&quot; row=&quot;2&quot; col=&quot;0&quot; class=&quot;info info-title&quot; /&gt;
+              &lt;Label text=&quot;{{ weight }}&quot; row=&quot;3&quot; col=&quot;0&quot; class=&quot;info info-value&quot; /&gt;
+            &lt;/GridLayout&gt;
+
+           &lt;!-- stats --&gt;
+            &lt;GridLayout rows=&quot;auto,auto&quot; columns=&quot;auto,*,*,*,*,*,*,auto&quot; class=&quot;stats&quot;&gt;
+              &lt;Label text=&quot;Stats&quot; row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;8&quot; class=&quot;stats-title&quot; /&gt;
+
+              &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;meter-first&quot;&gt;
+              &lt;/StackLayout&gt;
+
+              &lt;StackLayout id=&quot;hpMeter&quot; row=&quot;1&quot; col=&quot;1&quot; class=&quot;meter&quot;&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;Label text=&quot;HP&quot; textWrap=&quot;true&quot; class=&quot;meter-label&quot; /&gt;
+              &lt;/StackLayout&gt;
+
+              &lt;StackLayout id=&quot;attackMeter&quot; row=&quot;1&quot; col=&quot;2&quot; class=&quot;meter&quot;&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;Label text=&quot;Attack&quot; textWrap=&quot;true&quot; class=&quot;meter-label&quot; /&gt;
+              &lt;/StackLayout&gt;
+
+              &lt;StackLayout id=&quot;defenseMeter&quot; row=&quot;1&quot; col=&quot;3&quot; class=&quot;meter&quot;&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;Label text=&quot;Defense&quot; textWrap=&quot;true&quot; class=&quot;meter-label&quot; /&gt;
+              &lt;/StackLayout&gt;
+
+              &lt;StackLayout id=&quot;specialAttackMeter&quot; row=&quot;1&quot; col=&quot;4&quot; class=&quot;meter&quot;&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;Label text=&quot;Special Attack&quot; textWrap=&quot;true&quot; class=&quot;meter-label&quot; /&gt;
+              &lt;/StackLayout&gt;
+
+              &lt;StackLayout id=&quot;specialDefenseMeter&quot; row=&quot;1&quot; col=&quot;5&quot; class=&quot;meter&quot;&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;Label text=&quot;Special Defense&quot; textWrap=&quot;true&quot; class=&quot;meter-label&quot; /&gt;
+              &lt;/StackLayout&gt;
+
+              &lt;StackLayout id=&quot;speedMeter&quot; row=&quot;1&quot; col=&quot;6&quot; class=&quot;meter&quot;&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;StackLayout class=&quot;meter-value&quot;&gt;&lt;/StackLayout&gt;
+                &lt;Label text=&quot;Speed&quot; textWrap=&quot;true&quot; class=&quot;meter-label&quot; /&gt;
+              &lt;/StackLayout&gt;
+
+              &lt;StackLayout row=&quot;1&quot; col=&quot;7&quot; class=&quot;meter-last&quot;&gt;
+              &lt;/StackLayout&gt;
+            &lt;/GridLayout&gt;
+            &lt;/StackLayout&gt;
+
+          &lt;/GridLayout&gt;
+        &lt;/ScrollView&gt;
+    &lt;/GridLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>And now the javascript logic to fire the animations:</p>
+<pre><code class="lang-javascript">var viewModel = require(&quot;./pokedex-view-model&quot;);
+var colorModule = require(&quot;color&quot;);
+var animationModule = require(&quot;ui/animation&quot;);
+var observableModule = require(&quot;data/observable&quot;);
+var page;
+
+function onLoaded(args) {
+    page = args.object;
+    page.bindingContext = viewModel.pokedexViewModel;
+
+    //
+    // the pokedex view model has several properties
+    // - image of the pokemen, i.e. 001.png
+    // - name
+    // - description
+    // - id number
+    // - height
+    // - category
+    // - weight
+    // - stats (HP, Attack, Defense, Special Attack, Special Defense, and Speed)
+    // - prev pokemon name &amp; id
+    // - next pokemon name &amp; id   
+    // - navigate to prev/next pokemon
+    // - say the name
+    //
+
+    //
+    // listen for when the data-bound data source has a property changed event, then
+    // fire the stats animation
+    viewModel.pokedexViewModel
+        .addEventListener(observableModule.Observable.propertyChangeEvent, 
+            function (args) {
+                if (args.propertyName === &quot;stats&quot;) {
+                    animateStats(args.value);
+                } 
+            });
+
+    // tell the initial pokemon loaded to animate it&#39;s stats
+    animateStats(viewModel.pokedexViewModel.stats);
+
+}
+exports.onLoaded = onLoaded;
+
+//
+// animates the coloring of the stat boxes, based upon the pokemon&#39;s stat level
+//
+// concepts: 
+// - fillMeter(): fills a meter up to the level specified 
+// - drainMeter(): drains a meter to the level specified
+//
+// - each function returns a promise for chained commands
+// - a start delay and end delay can be added in milliseconds
+function animateStats(meterValues) {
+
+    //
+    // collection of UI ids for each of the stat meters
+    var meterIds = 
+        [&quot;hpMeter&quot;, &quot;attackMeter&quot;, &quot;defenseMeter&quot;, 
+            &quot;specialAttackMeter&quot;, &quot;specialDefenseMeter&quot;, &quot;speedMeter&quot;];
+
+    //
+    // STEPS
+    // 1. drain to zero (resets)
+    // 2. pick an initial level to fillto (random)
+    // 3. fill to the initial level
+    // 4. drain to zero
+    // 5. fill to the data-bound stat level
+    var controlMeter = function (meter, initialLevel, level, delay) {
+        setTimeout(function() {
+            drainMeter(meter, 10, 0, 500)
+                .then(function() { return fillMeter(meter, 0, initialLevel, 0); })
+                .then(function() { return drainMeter(meter, initialLevel, 0, 500); })
+                .then(function() { return fillMeter(meter, 0, level, 0); });
+        }, delay);
+    };
+
+    //
+    // shuffles an array
+    var shuffle = function (array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    };
+
+    //
+    // STEPS: 
+    // 1. establish a start delay of 250 milliseconds 
+    // 2. randomize the order in which the stats are anuimated
+    // 3. run the animation in the randomized order, passing in a random initial value
+    var delay = 0;
+    var delayOffset = 250;
+    var order = shuffle([0,1,2,3,4,5]);
+    for (var i = 0; i &lt; order.length; i++) {
+        var initialLevel = Math.floor((Math.random() * 10) + 1);
+        controlMeter(meterIds[order[i]], initialLevel, meterValues[order[i]], delay);
+        delay += delayOffset;
+    }
+}
+
+
+
+function fillMeter(id, fromLevel, toLevel, beginDelay, endDelay) {
+    var meter = getMeterById(id);
+    return fillRecurse(meter, toLevel, fromLevel, 1, &quot;#30A7D7&quot;, endDelay);
+}
+
+function drainMeter(id, fromLevel, toLevel, endDelay) {
+    var meter = getMeterById(id);
+    return fillRecurse(meter, toLevel-1, fromLevel-1, -1, &quot;white&quot;, endDelay);    
+}
+
+function fillRecurse(meter, level, current, step, color, endDelay) {
+    if (current === level) return new Promise(function(resolve,error) {
+        setTimeout(function() {
+            resolve();
+        }, endDelay);
+    });
+
+    //
+    // MAGIC HAPPENS HERE
+    // call the animate() function of NativeScript, changing the color with a duration
+    return meter[current].animate({
+        backgroundColor: new colorModule.Color(color),
+        duration: 40
+    }).then(function() {
+        return fillRecurse(meter, level, current+step, step, color, endDelay);
+    });
+}
+
+function getMeterById(id) {
+    var meter = new Array();
+
+    var meterContainer = page.getViewById(id);
+    var childrenCount = meterContainer.getChildrenCount();
+    for (var i = childrenCount-2; i &gt;= 0; i--) {
+        meter[meter.length] = meterContainer.getChildAt(i);
+    }
+
+    return meter;
+}
+</code></pre>
+<div class="exercise-end"></div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="scripts/built.js"></script>
+
+</body>
+</html>
